@@ -6,11 +6,11 @@ const { STATUS_CODE } = require("../constants/statusCode");
 
 const requestRouting = (request, response) => {
     const { url, method } = request;
-    const date = new Date().toISOString(); // Pobranie aktualnej daty
+    const date = new Date().toISOString(); 
 
     console.log(`INFO [${date}]: ${method} – ${url}`);
 
-    // Obsługa ścieżek
+    
     if (url === "/") {
         return homeRouting(request, response);
     }
@@ -25,7 +25,7 @@ const requestRouting = (request, response) => {
         process.exit(); // Zamknięcie aplikacji
     }
 
-    // Obsługa błędu 404
+    
     console.log(`ERROR [${date}]: requested url ${url} doesn’t exist`);
     response.writeHead(STATUS_CODE.NOT_FOUND, { "Content-Type": "text/html" });
     response.end("<h1>404 Not Found</h1><p>The requested URL was not found on this server.</p>");
