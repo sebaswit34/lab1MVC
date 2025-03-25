@@ -22,7 +22,7 @@ const requestRouting = (request, response) => {
     }
     if (url === "/kill") {
         console.log(`PROCESS [${date}]: logout has been initiated and the application will be closed`);
-        process.exit(); // Zamknięcie aplikacji
+        process.exit(); 
     }
 
     
@@ -31,5 +31,4 @@ const requestRouting = (request, response) => {
     response.end("<h1>404 Not Found</h1><p>The requested URL was not found on this server.</p>");
 };
 
-// 🔧 Eksportowanie funkcji requestRouting
 module.exports = requestRouting;
